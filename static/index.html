@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autobuses Wampis | Compra tu boleto</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Autobuses Wampis, inicio">
+      <span class="brand-mark">W</span>
+      <span><strong>Wampis</strong><small>Viaja a tu ritmo</small></span>
+    </a>
+    <nav><a href="#rutas">Rutas</a><a href="/docs">API</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">TRANSPORTE TERRESTRE</p>
+        <h1>Tu próximo destino empieza aquí.</h1>
+        <p class="lead">Compra boletos de forma rápida, clara y segura. Elige una ruta y recibe tu comprobante al instante.</p>
+      </div>
+      <div class="hero-stamp"><span>04</span><small>rutas<br>disponibles</small></div>
+    </section>
+
+    <section class="booking-layout" id="rutas">
+      <div class="route-panel">
+        <div class="section-heading"><div><p class="eyebrow">PASO 01</p><h2>Elige tu ruta</h2></div><span class="status-dot" id="connection-status">Conectando...</span></div>
+        <div class="route-list" id="route-list"><div class="loading">Cargando rutas desde el servidor...</div></div>
+      </div>
+
+      <aside class="checkout-panel">
+        <p class="eyebrow">RESERVA RÁPIDA</p>
+        <h2>Completa tu viaje</h2>
+        <form id="booking-form">
+          <label for="ticket-count">Cantidad de boletos</label>
+          <div class="quantity-control"><button type="button" id="minus" aria-label="Disminuir cantidad">−</button><input id="ticket-count" type="number" min="1" max="10" value="1"><button type="button" id="plus" aria-label="Aumentar cantidad">+</button></div>
+          <div class="summary"><div><span>Ruta</span><strong id="summary-route">Selecciona una ruta</strong></div><div><span>Precio por boleto</span><strong id="summary-price">$0.00</strong></div><div class="total"><span>Total</span><strong id="summary-total">$0.00</strong></div></div>
+          <button class="buy-button" type="submit" id="buy-button" disabled>Comprar boletos <span>→</span></button>
+          <p class="form-message" id="form-message" role="status"></p>
+        </form>
+      </aside>
+    </section>
+
+    <section class="ticket" id="ticket" hidden>
+      <div><p class="eyebrow">COMPRA CONFIRMADA</p><h2>Tu boleto está listo.</h2><p id="ticket-message"></p></div>
+      <div class="ticket-details"><span>Folio <strong id="ticket-folio">—</strong></span><span>Viaje <strong id="ticket-route">—</strong></span><span>Boletos <strong id="ticket-count-result">—</strong></span><span>Total pagado <strong id="ticket-total">—</strong></span></div>
+    </section>
+  </main>
+  <footer><span>© Autobuses Wampis</span><span>Hecho para viajar mejor</span></footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
